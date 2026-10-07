@@ -1,0 +1,35 @@
+<b>THE LUNAR GRAVITY SURVEY</b>
+INTE 42312 Virtual & Augmented Reality - University of Kelaniya
+
+<b>TEAM</b>
+[PLACEHOLDER: Member 1 - role]
+[PLACEHOLDER: Member 2 - role]
+[PLACEHOLDER: Member 3 - role]
+[PLACEHOLDER: Member 4 - role]
+
+<b>3D MODELS</b>
+"Simple Low Poly Lunar Lander" (https://skfb.ly/oQ9TM) by Trockk,
+licensed under Creative Commons Attribution 4.0 (CC BY 4.0).
+Modifications: rescaled and re-centred.
+
+Terrain, craters, rocks, starfield, sample container and scanner:
+generated / built by the team (original work).
+
+<b>AUDIO</b>
+[PLACEHOLDER: list every sound - title, author, source URL, licence]
+Houston voice lines: recorded by [PLACEHOLDER]
+
+<b>SOFTWARE & TOOLKITS</b>
+Unity 6 (6000.6) - Unity Technologies
+XR Interaction Toolkit, OpenXR Plugin, Input System - Unity Technologies
+VR Template sample assets - Unity Technologies
+TextMesh Pro - Liberation Sans (SIL Open Font License)
+Inter typeface (SIL Open Font License)
+
+<b>SCIENCE REFERENCES</b>
+Lunar surface gravity 1.62 m/s² - NASA Moon Fact Sheet
+Sample classes simplified from Apollo lunar sample data (NASA)
+
+<b>AI ASSISTANCE</b>
+Code scaffolding and setup guidance: Claude (Anthropic).
+[PLACEHOLDER: list any other AI tools and what they were used for]

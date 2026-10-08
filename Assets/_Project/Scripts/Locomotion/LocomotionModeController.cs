@@ -43,6 +43,9 @@ namespace LunarSurvey
 
         public LocomotionMode Mode { get; private set; }
 
+        /// <summary>True while thumbstick / WASD continuous movement is on (Lunar mode or the desktop fallback).</summary>
+        public bool SmoothMoveActive => Mode == LocomotionMode.Lunar || desktopOverride;
+
         // Set by DesktopFallbackRig: on a flat monitor continuous movement is always on.
         private bool desktopOverride;
 
@@ -109,7 +112,7 @@ namespace LunarSurvey
             if (modeLabel != null)
             {
                 modeLabel.text = lunar
-                    ? "CURRENT: LUNAR\n<size=70%>Thumbstick move + jump. May cause motion sickness.</size>"
+                    ? "CURRENT: LUNAR\n<size=70%>Thumbstick hop-walk + jump. May cause motion sickness.</size>"
                     : "CURRENT: COMFORT\n<size=70%>Teleport + snap turn. Recommended.</size>";
             }
         }

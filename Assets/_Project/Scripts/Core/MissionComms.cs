@@ -53,6 +53,7 @@ namespace LunarSurvey
         [SerializeField] private List<CommsLine> lines = DefaultLines();
 
         private readonly Queue<CommsLine> queue = new Queue<CommsLine>();
+        private static List<CommsLine> defaults;
         private Coroutine player;
 
         public bool IsSpeaking => player != null;
@@ -92,6 +93,12 @@ namespace LunarSurvey
         private CommsLine Find(string id)
         {
             foreach (CommsLine l in lines)
+            {
+                if (l != null && l.id == id) return l;
+            }
+            // Lines added after the scene was built are not in the serialized list yet: use the default text.
+            if (defaults == null) defaults = DefaultLines();
+            foreach (CommsLine l in defaults)
             {
                 if (l != null && l.id == id) return l;
             }
@@ -138,7 +145,7 @@ namespace LunarSurvey
         }
 
         /// <summary>Default script. Edit freely in the Inspector; keep the ids.</summary>
-        private static List<CommsLine> DefaultLines()
+        public static List<CommsLine> DefaultLines()
         {
             return new List<CommsLine>
             {
@@ -164,6 +171,12 @@ namespace LunarSurvey
                     subtitle = "One minute, Survey One. Start heading back to the lander." },
                 new CommsLine { id = "storm_30s", holdSeconds = 3f,
                     subtitle = "Thirty seconds! Secure what you have!" },
+                new CommsLine { id = "scanner_holstered", holdSeconds = 6f,
+                    subtitle = "Scanner is clipped to your belt. Grab it from your left hip whenever you need it." },
+                new CommsLine { id = "boundary_warning", holdSeconds = 5f,
+                    subtitle = "Survey One, you're at the edge of the survey zone. Turn back toward the lander." },
+                new CommsLine { id = "storm_radiation", holdSeconds = 7f,
+                    subtitle = "Your dosimeter is picking up the leading edge of the solar particle event. Radiation is climbing. Keep moving." },
                 new CommsLine { id = "mission_success", holdSeconds = 8f,
                     subtitle = "Container sealed. All three samples secured before the storm. Outstanding work, Survey One. Mission complete." },
                 new CommsLine { id = "storm_hit", holdSeconds = 8f,

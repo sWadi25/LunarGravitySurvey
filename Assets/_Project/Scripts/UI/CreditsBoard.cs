@@ -18,6 +18,12 @@ namespace LunarSurvey
         {
             if (target == null) target = GetComponentInChildren<TMP_Text>();
             if (target == null) return;
+            // Shrink to fit if the list grows, instead of spilling outside the board.
+            float max = target.fontSize;
+            target.enableAutoSizing = true;
+            target.fontSizeMax = max;
+            target.fontSizeMin = Mathf.Min(10f, max);
+            target.overflowMode = TextOverflowModes.Truncate;
             target.text = creditsFile != null
                 ? creditsFile.text
                 : "CREDITS\n\n(Assign Assets/_Project/Data/Credits.txt to the CreditsBoard component.)";

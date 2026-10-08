@@ -112,6 +112,9 @@ namespace LunarSurvey.EditorTools
                 EditorBuildSettings.scenes = scenes.ToArray();
             }
 
+            // Play-test fixes (scanner holster, terrain follow, boundary, Sun, storm FX, audio...). Idempotent.
+            LunarPlaytestFixes.ApplyAll();
+
             EditorSceneManager.MarkSceneDirty(scene);
             AssetDatabase.SaveAssets();
             Debug.Log("[LunarSceneBuilder] Done. Press Ctrl+S (Cmd+S) to save the scene, then press Play.");
